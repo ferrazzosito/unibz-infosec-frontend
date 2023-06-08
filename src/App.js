@@ -33,14 +33,6 @@ function App() {
             <Route path="/my-profile-vendor" element={<RequireVendorAuth> <VendorProfilePage/> </RequireVendorAuth>} />
             <Route path="/product" element={<RequireAuth> <ProductPage/> </RequireAuth>} />
             <Route path="/vendor" element={<RequireCustomerAuth> <VendorPage/> </RequireCustomerAuth>} />
-              {/* <ReviewForm /> */}
-              {/* <VendorHomePage /> */}
-              {/* <LoginPage /> */}
-              {/* <RegistrationPage /> */}
-              {/* <ProductPage />       */}
-
-              {//todo: 404 goes in login
-              }
 
             </Routes>
         

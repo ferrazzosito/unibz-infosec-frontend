@@ -14,7 +14,6 @@ import xss from "xss";
  */
 const UnsafeSearchBar = ({query, setQuery}) => {
 
-    const sanificatedQuery = xss(query);
 
     return(
         <Grid container justifyContent="center" >
@@ -25,7 +24,7 @@ const UnsafeSearchBar = ({query, setQuery}) => {
             </Grid>
             <Grid item container justifyContent="center" xs={12} style={{margin: "5 0 0 5"}}>
                 <Grid item xs={6}>
-                    <div color="text.secondary" dangerouslySetInnerHTML={{__html: 'results shown for: ' + sanificatedQuery}}/>
+                    <div color="text.secondary" dangerouslySetInnerHTML={{__html: 'results shown for: ' + query}}/>
                 </Grid>
             </Grid>
         </Grid>

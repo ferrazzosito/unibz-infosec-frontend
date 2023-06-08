@@ -30,12 +30,6 @@ const UnsafeContentProductCard = ({type, name, price, vendorName, vendorId, desc
     const navigate = useNavigate();
     const redirectVendorPage = () => navigate(`/vendor?id=${vendorId}`);
 
-    const sanificatedType = xss(type);
-    const sanificatedName = xss(name);
-    const sanificatedPrice = xss(price);
-    const sanificatedDescription = xss(description);
-
-
     return (
     <CardContent>
         <div color="text.secondary" gutterBottom dangerouslySetInnerHTML={{__html: type}}/>
@@ -177,19 +171,14 @@ const VendorProductCard = ({id, type, name, price,vendorName, description, delet
  */
 const ReviewCard = ({rating, title, description, writer, answer}) => {
 
-    const sanificatedRating = xss(rating);
-    const sanificatedTitle = xss(title);
-    const sanificatedDescription = xss(description);
-    const sanificatedWriter = xss(writer);
-
     return (
         <Card sx={{ minWidth: 275 }}>
             <CardContent>
-                <div style= {{fontSize: 14}} dangerouslySetInnerHTML={{__html: sanificatedRating}}/>
-                <div style= {{fontSize: 19, fontWeight: "bold" }} dangerouslySetInnerHTML={{__html: sanificatedTitle}}/>
+                <div style= {{fontSize: 14}} dangerouslySetInnerHTML={{__html: rating}}/>
+                <div style= {{fontSize: 19, fontWeight: "bold" }} dangerouslySetInnerHTML={{__html: title}}/>
                 
-                <div style= {{fontSize: 14}} dangerouslySetInnerHTML={{__html: "Written by " + sanificatedWriter}}/>
-                <div style= {{fontSize: 14}} dangerouslySetInnerHTML={{__html: sanificatedDescription}}/>
+                <div style= {{fontSize: 14}} dangerouslySetInnerHTML={{__html: "Written by " + writer}}/>
+                <div style= {{fontSize: 14}} dangerouslySetInnerHTML={{__html: description}}/>
                 {/* {answer ? <div style={{marginTop: 10}}> */}
                     {answer}
                     {/* <div/> : <></>} */}
