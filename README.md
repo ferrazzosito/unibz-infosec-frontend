@@ -132,8 +132,28 @@ By clicking `MY ACCOUNT` button you get redirected to [http://localhost:3000/my-
 
 ## Vulnerabilities
 
--- vulnerabilities
+We managed to have the secure version and the insecure version such that.
+Insecure version is vulnerable to 
+- XSS stored attack
+- XSS reflected attack
+- SQL injection attack
+- XSRF token attack
+- interception attacks 
+- password attacks
 
--- vulnerabilities notes (how things work or where to find them)
+plus BONUS:
+- password leaking attack
+- man in the middle XSS-driven attack
 
--- vuln nuova 
+whilst the secure version implements mechanisms to overcome these vulnerabilities.
+The secure version 
+- for XSS reflected and stored attacks, it implements in the backend the query sanification
+- for SQL injection, it performs in the backend a sanification with the prepared statements
+- for XSRF token attack, ....
+- for interception attacks, it implements a diffie hellman keys exchanges in order to have encrypted communication. It also implements the digital signature to avoid fraudolent changes due to an interception
+- for password attacks, it implements mechanisms of hashing the password with a salt and using the SHA256 (much more secure than the MD5)
+- password leaking attack, it implements specific safer User Entities, to avoid in any way to leak password for a request
+- to avoid man in the middle XSS-driven attack, it implements also in the frontend the query sanification
+
+
+code struct?
