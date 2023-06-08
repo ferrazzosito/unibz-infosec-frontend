@@ -62,7 +62,7 @@ const UnsafeContentProductCard = ({type, name, price, vendorName, vendorId, desc
  */
 const BasicProductCard = ({type, name, price, vendorId, description}) => {
     
-    const {findUser} = useContext(authContext);    
+    const {user, findUser} = useContext(authContext);    
     
     const [vendor, setVendor] = React.useState({});
     
@@ -83,7 +83,7 @@ const BasicProductCard = ({type, name, price, vendorId, description}) => {
                 vendorName={vendor.email}  
                 vendorId={vendorId} 
                 description={description } 
-                isVendor={vendor.role === "VENDOR"}/>
+                isVendor={user.payload.role === "vendor"}/>
         </Card>
     )
 

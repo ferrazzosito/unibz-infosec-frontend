@@ -103,11 +103,24 @@ In the bottom part you can click on `LOGOUT` to log out or on `MY ACCOUNT` to go
   
 By clicking `SEE REVIEWS` button you get redirected to [http://localhost:3000/product?id=1](http://localhost:3000/product?id=1) where the id is equal to the id of the product you'd like to see. In this page you can find a form to publish a review for this product and below you can read all of the reviews already present, which can maybe have a reply or not (the reply is an innerbox with a similar structure as a review). To come back to the previous page you can just go back with your browser.  
 
-By clicking `MY ACCOUNT` button you get redirected to [http://localhost:3000/my-profile-buyer](http://localhost:3000/my-profile-buyer) in which you can see all the information related to your customer account. You can see at the very top your current balance and top it up for free in the form below that. You can see your past orders and know if they have been approved or not by the vendor. When approved the money the price of the product is subtracted by your account. You can also see 
+By clicking `MY ACCOUNT` button you get redirected to [http://localhost:3000/my-profile-buyer](http://localhost:3000/my-profile-buyer) in which you can see all the information related to your customer account. You can see at the very top your current balance and top it up for free in the form below that. You can see your past orders and know if they have been approved or not by the vendor. When approved the money the price of the product is subtracted by your account. You can also access the reviews page of the product of the order from these cards, as well as for the vendor's page.
+
+By clicking `by vendor < name >` text you get redirected to [http://localhost:3000/vendor?id=1](http://localhost:3000/vendor?id=1) in which you can find the email of the selected vendor and the button in the bottom right cornern to chat with him in live.
 
 
 
-### Usage Notes
+
+### As a Vendor
+
+In [http://localhost:3000/selling](http://localhost:3000/selling) you'll find the homepage for vendor. There's a form to add products. Below you can search a name of a product of yours and find them. On the products you can see their reviews and delete them only if they haven't been involved in a relationship yet, like orders, reviews and so on.
+In the bottom part you can find the chat requests and click `OPEN CHAT` to get connected to that customer and chat with them.  
+
+In the bottom part you can click on `LOGOUT` to log out or on `MY ACCOUNT` to go on your vendor account page.  
+  
+By clicking `MY ACCOUNT` button you get redirected to [http://localhost:3000/my-profile-vendor](http://localhost:3000/my-profile-vendor) in which you can see all the information related to your vendor account. You can, in fact, see all the orders of your products, their status and by whom they have been bought, and the reviews of your product related to that order. You can approve the order just by clicking `APPROVE ORDER`. 
+
+
+## Usage Notes
 
 - To try the chat you need to open an icognito tab and login with another account having a counterpart role than the one you opened the chat with, so with a Vendor role.
 
@@ -115,6 +128,12 @@ By clicking `MY ACCOUNT` button you get redirected to [http://localhost:3000/my-
 
 - The chat is from a frontend point of view a bit buggy, because it was meant for a slight different version of react. Nevertheless, if you use it properly, without particular edge cases, it works as it should.
 
+- Keep in mind that the insecure version doesn't use salt in the encryption therefore you have to access with different accounts to the safe/unsafe version.
+
+## Vulnerabilities
+
 -- vulnerabilities
 
 -- vulnerabilities notes (how things work or where to find them)
+
+-- vuln nuova 
