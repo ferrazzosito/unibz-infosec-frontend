@@ -149,7 +149,7 @@ whilst the secure version implements mechanisms to overcome these vulnerabilitie
 The secure version 
 - for XSS reflected and stored attacks, it implements in the backend the query sanification
 - for SQL injection, it performs in the backend a sanification with the prepared statements
-- for XSRF token attack, ....
+- for XSRF token attack, it assigns a randomly-generated token string during login (in our case embedded in the session JWT token), to be then sent in a header by the client and checked by the backend at every subsequent POST request (therefore ensuring that the request is not coming from a third party, that would not have access to the needed token)
 - for interception attacks, it implements a diffie hellman keys exchanges in order to have encrypted communication. It also implements the digital signature to avoid fraudolent changes due to an interception
 - for password attacks, it implements mechanisms of hashing the password with a salt and using the SHA256 (much more secure than the MD5)
 - password leaking attack, it implements specific safer User Entities, to avoid in any way to leak password for a request
