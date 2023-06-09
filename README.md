@@ -128,6 +128,8 @@ By clicking `MY ACCOUNT` button you get redirected to [http://localhost:3000/my-
 
 - Keep in mind that the insecure version doesn't use salt in the encryption therefore you have to access with different accounts to the safe/unsafe version.
 
+- The sign up of an account takes a while as well, as the RSA keys are generated at the sign up.
+
 ## Vulnerabilities
 
 We managed to have the secure version and the insecure version such that.
